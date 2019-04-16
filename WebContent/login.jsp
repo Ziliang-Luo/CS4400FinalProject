@@ -9,9 +9,9 @@
 <body>
 <div align = "center">
 <form action="Login" method="post">
-username :<input type="text" name="username"> <br>
+email :<input type="text" name="email"> <br>
 password :<input type="password" name="password"><br>
-<input type="submit" value="Login">  <input type="submit" value="Register">
+<input type="submit" value="Submit">  <a href="http://localhost:8080/finalProject/UserRegister.jsp">New Account Register</a>
 </form>
 </div>
 </body>
