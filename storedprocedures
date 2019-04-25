@@ -1,0 +1,75 @@
+*get arriveCity*
+
+USE `sys`;
+DROP procedure IF EXISTS `getDepartCity`;
+
+DELIMITER $$
+USE `sys`$$
+CREATE PROCEDURE `getDepartCity` 
+(IN FLIGHT_departCity INT(11), OUT FLIGHT_arriveCity VARCHAR(45))
+BEGIN
+SELECT Name INTO Flight_arriveCity
+FROM Flight
+WHERE flightID = FLIGHT_flightID;
+END$$
+
+DELIMITER ;
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getDepartCity`(IN FLIGHT_departCity INT(11), OUT FLIGHT_arriveCity VARCHAR(45))
+BEGIN
+SELECT Name INTO Flight_arriveCity
+FROM Flight
+WHERE flightID = FLIGHT_flightID;
+END
+
+
+
+*get depart time*
+
+USE `sys`;
+DROP procedure IF EXISTS `getDepartTime`;
+
+DELIMITER $$
+USE `sys`$$
+CREATE PROCEDURE `getDepartTime` 
+(IN FLIGHT_flightID INT(11), OUT FLIGHT_departTime TIME)
+BEGIN
+SELECT Name INTO Flight_departTime
+FROM Flight
+WHERE flightID = FLIGHT_flightID;
+END$$
+
+DELIMITER ;
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getDepartTime`(IN FLIGHT_flightID INT(11), OUT FLIGHT_departTime TIME)
+BEGIN
+SELECT Name INTO Flight_departTime
+FROM Flight
+WHERE flightID = FLIGHT_flightID;
+END
+
+
+*get users emails*
+
+
+USE `sys`;
+DROP procedure IF EXISTS `getAllUsersEmail`;
+
+DELIMITER $$
+USE `sys`$$
+CREATE PROCEDURE `getAllUsersEmail` 
+(IN User_firstName VARCHAR(45), OUT User_email VARCHAR(45))
+BEGIN
+SELECT Name INTO USER_email
+FROM User
+WHERE phoneNumber = USER_phoneNumber;
+END$$
+
+DELIMITER ;
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getAllUsersEmail`(IN User_firstName VARCHAR(45), OUT User_email VARCHAR(45))
+BEGIN
+SELECT Name INTO USER_email
+FROM User
+WHERE phoneNumber = USER_phoneNumber;
+END
